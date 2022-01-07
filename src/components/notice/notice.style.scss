@@ -1,4 +1,5 @@
 @import '../../sass/variables.scss';
+@import '../../sass/mixins.scss';
 
 .notice{
     background-color: $color-background-3;
@@ -8,6 +9,10 @@
 
     position: relative;
     overflow: hidden;
+
+    @include response(phone){
+        width: 100%;
+    }
 
     .bg-layer{
         position: absolute;
@@ -19,6 +24,8 @@
     .content{
         height: 100%;
         padding: 2rem 4rem;
+
+        position: relative;
     }
 
     .heading{

@@ -36,10 +36,23 @@ body{
 
     display: grid;
     grid-template-columns: [sidebar-start] 9rem [sidebar-end main-col-start] 1fr [main-col-end];
-    grid-template-rows: [full-row-start header-start] 6rem [header-end main-row-start] 1fr [main-row-end full-row-end];
+    grid-template-rows: [header-start] 6rem [header-end main-row-start] 1fr [main-row-end];
     column-gap: 2rem;
 
+    @include response (phone) {
+        grid-template-columns: [col-start] 1fr [col-end];
+        grid-template-rows: [header-start] min-content [header-end main-start] min-content [main-end body-start] min-content [body-end] ;
+    }
+
     &__header{
+        grid-column: main-col-start / main-col-end;
+        grid-row: header-start / header-end;
+
+        @include response(phone){
+            grid-column: col-start / col-end;
+            grid-row: main-start / main-end;
+        }
+
         padding: 1rem 2rem;
 
         display: flex;
@@ -88,7 +101,14 @@ body{
 
     &__sidebar{
         grid-column: sidebar-start / sidebar-end;
-        grid-row: full-row-start / full-row-end;
+        grid-row: 1 / -1;
+
+        @include response(phone){
+            grid-column: col-start / col-end;
+            grid-row: header-start / header-end;
+
+            display: block
+        };
 
         display: grid;
         grid-template-rows: repeat(2, 1fr);
@@ -103,6 +123,13 @@ body{
             flex-direction: column;
             gap: 2rem;
 
+            @include response(phone){
+                flex-direction: row;
+                padding-top: 0;
+
+                border-radius: 0 0 2rem 2rem;
+            }
+
             .logo-container{
                 // background-color: #000; 
                 width: 100%;
@@ -111,6 +138,13 @@ body{
 
                 display: flex;
                 justify-content: flex-end;
+
+                @include response(phone){
+                    justify-content: center;
+                    align-items: center;
+                    padding-right: 0;
+                    margin-bottom: 0;
+                }
 
                 .logo{
                     height: 4.6rem;
@@ -159,6 +193,10 @@ body{
             width: min-content;
             justify-self: self-end;
 
+            @include response(phone){
+                display: none;
+            }
+
             .contact-list{
                 // background-color: #000;
                 .item{
@@ -175,29 +213,29 @@ body{
                             // width: 2.5rem;
                         }
                         .doc-icon{
-                            height: 2.5rem;
-                            width: 2.1rem;
+                            height: 2.8rem;
+                            width: 2.4rem;
                         }
                         .tel-icon{
-                            height: 1.5rem;
-                            width: 2rem;
+                            height: 1.8rem;
+                            width: 2.3rem;
 
                             // background-color: turquoise;
                         }
                         .med-icon{
-                            height: 1.5rem;
-                            width: 1.9rem;
+                            height: 1.7rem;
+                            width: 2.1rem;
                         }
                         .twi-icon{
-                            height: 1.4rem;
-                            width: 2rem;
+                            height: 1.7rem;
+                            width: 2.3rem;
                         }
                         .git-icon{
-                            height: 2.2rem;
-                            width: 2.2rem;
+                            height: 2.3rem;
+                            width: 2.3rem;
                         }
                         .rad-icon{
-                            height: 1.9rem;
+                            height: 2.2rem;
                             width: 2.2rem;
                         }
                         .inst-icon{
@@ -211,7 +249,14 @@ body{
     }
 
     &__main{
+        grid-column: main-col-start / main-col-end;
+        grid-row: main-row-start / main-row-end;
         padding: 0 2rem;
         // background-color: violet;
+
+        @include response(phone){
+            grid-column: col-start / col-end;
+            grid-row: body-start / body-end;
+        }
     }
 }
