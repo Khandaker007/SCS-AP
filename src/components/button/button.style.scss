@@ -1,0 +1,32 @@
+@import '../../sass/variables.scss';
+
+.btn{                
+    border-radius: 3rem;
+    padding: .7rem 2rem;
+    color: $color-text;
+    border: none;
+    font-size: 1.4rem;
+    text-align: center;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    .icon{
+        height: 1.5rem;
+    }
+}
+.dis-connect{
+    background-color: transparent;
+    border: 1px solid white;
+}
+.connect{
+    background-color: $color-primary;
+    border: 1px solid $color-primary;
+}
+
+.hide{
+    display: none;
+}

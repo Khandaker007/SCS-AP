@@ -1,0 +1,58 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+// HEADING TAG
+%heading{
+    font-weight: 900;
+}
+.heading-1{
+    @extend %heading;
+    font-size: 7rem;
+    color: $color-text;
+    line-height: 1;
+}
+.heading-2{
+    // @extend %heading;
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 1;
+}
+.heading-3{
+    // @extend %heading;
+    font-weight: 600;
+    font-size: 2rem;
+    color: $color-text;
+    line-height: 1
+}
+.heading-4{
+    @extend %heading;
+    font-size: 1.5rem;
+    color: $color-text;
+}
+
+// PADDING
+.pb-1{
+    padding-bottom: 1rem;
+}
+.pb-2{
+    padding-bottom: 2rem;
+}
+.pb-3{
+    padding-bottom: 3rem;
+}
+.pb-4{
+    padding-bottom: 4rem;
+}
+
+// FONT SIZE
+.fs-1{
+    font-size: 1.5rem;
+}
+.fs-2{
+    font-size: 2rem;
+}
+
+// ALIGNMENT
+.align-center{
+    text-align: center;
+}
