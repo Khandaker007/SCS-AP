@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 // COMPONENTS
 import Stake from './pages/stake/stake.component'
 import Swap from './pages/swap/swap.component'
+import Button from './components/button/button.component'
 
 // LOGO
 import logo from './assets/logo/icon.png'
@@ -34,8 +35,10 @@ function App() {
         <div className="dashboard__header">
           <h3 className='heading-3'>Stake</h3>
           <div className="btn-container">
-            <button className='btn dis-connect'><img className='icon' src={chainIcon} alt="chain icon" />DisConnect Wallet</button>
-            <button className='btn connect'><img className='icon' src={chainIcon} alt="cahin icon" /> Connect Wallet</button>
+            <Button text={'DisConnect Wallet'} icon transparent/>
+            <Button text={'Connect Wallet'} icon/>
+            {/* <button className='btn dis-connect'><img className='icon' src={chainIcon} alt="chain icon" />DisConnect Wallet</button>
+            <button className='btn connect'><img className='icon' src={chainIcon} alt="cahin icon" /> Connect Wallet</button> */}
           </div>
         </div>
         {/* sidebar */}
