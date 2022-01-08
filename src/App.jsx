@@ -45,7 +45,7 @@ function App() {
               <img className='logo' src={logo} alt="logo" />
             </div>
             <div className='link-container'>
-              <Link to='/'><img className='icon stake-icon' src={stakeIcon} alt="stake icon" /></Link>
+              <Link to='/' className='stack-btn'><img className='icon stake-icon' src={stakeIcon} alt="stake icon" /></Link>
             </div>
             <div className='link-container'>
               <Link to='/swap'><img className='icon swap-icon' src={swapIcon} alt="swap icon" /></Link>

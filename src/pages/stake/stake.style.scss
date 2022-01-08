@@ -7,26 +7,43 @@
     grid-template-rows: repeat(3, min-content);
     grid-gap: 2rem;
 
+    @include response(phone){
+        grid-gap: 4rem;
+    }
+
     &__notice{
         overflow: hidden;
         display: flex;
         gap: 2rem;
     }
     &__overview{
-        // background-color: orangered;
-
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 2rem;
 
         @include response (tab-port){
             grid-template-columns: 1fr;
+
+            grid-gap: 4rem;
         }
     }
     &__history{
-        // background-color: palegreen;
         .heading{
             font-size: 1.8rem;
+
+            @include response(phone){
+                font-size: 2.5rem;
+            }
+        }
+
+        .table-container{
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+
+            @include response(phone){
+                width: 60rem;
+            }
         }
 
         .table{
@@ -37,9 +54,10 @@
             border-radius: 1.2rem;
             width: 100%;
             border-spacing: 0;
-            overflow-x: scroll;
-            white-space: nowrap;
-            display: block;
+
+            @include response(phone){
+                font-size: 2rem;
+            }
             
             &__head{
                 text-align: left;
@@ -57,21 +75,27 @@
                 }
             }
             &__body{
-                height: 4rem;
                 .td-last{
                     display: flex;
+                    align-items: center;
                     gap: 1.5rem;
                 }
             }
 
             th, td{
                 padding: .5rem 1.5rem;
+                vertical-align: middle;
+                
             }
             td{
                 border-bottom: 1px solid rgba(255, 255, 255, 0.199);
             }
             .token-icon{
-                width: 2.5rem;
+                width: 2.2rem;
+
+                @include response(phone){
+                    width: 3rem;
+                }
             }
         }
     }

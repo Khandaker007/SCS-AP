@@ -12,6 +12,7 @@
 
     @include response(phone){
         width: 100%;
+        height: 70rem;
     }
 
     .bg-layer{
@@ -19,6 +20,13 @@
         top: -5rem;
         width: 70rem;
         height: 45rem;
+
+        @include response(phone){
+            top: 30rem;
+            right: 0;
+            width: 90rem;
+            height: 55rem;
+        }
     }
 
     .content{
@@ -32,11 +40,19 @@
         font-size: 4rem;
         font-weight: 300;
 
+        @include response(phone){
+            font-size: 6rem;
+        }
+
         .highlight{
             color: $color-highlight;
         }
     }
     .text{
         font-size: 1.6rem;
+
+        @include response(phone){
+            font-size: 2.5rem;
+        }
     }
 }

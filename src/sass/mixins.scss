@@ -19,16 +19,16 @@ $breakpoint arguments choice:
 - big-desktop
 */
 @mixin response ($breakpoint){
-    @if $breakpoint == s-phone {
+    @if $breakpoint == s-phone { // 
         @media (max-width: 26.88em) {@content};
     }
-    @if $breakpoint == M-phone {
+    @if $breakpoint == M-phone { // media size 568px
         @media (max-width: 35.5em) {@content};
     }
     @if $breakpoint == phone { // media size 640px
         @media (max-width: 40em) {@content};
     }
-    @if $breakpoint == vp-800 {
+    @if $breakpoint == vp-800 { // media size 800px
         @media (max-width: 50em) {@content};
     }
     @if $breakpoint == tab-port { // media size 960px

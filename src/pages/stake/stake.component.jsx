@@ -9,6 +9,7 @@ import Button from '../../components/button/button.component'
 import token from '../../assets/icons/token.png'
 
 import './stake.style.scss'
+import '../../sass/typography.scss'
 
 export default function Stake() {
     return (
@@ -22,43 +23,45 @@ export default function Stake() {
             </div>
             <div className="stake__history">
                 <h2 className='heading'>History</h2>
-                <table className='table'>
-                    <thead className='table__head'>
-                        <tr className='head-row'>
-                            <th className='first-th'>tokens</th>
-                            <th>est. apy</th>
-                            <th>duration</th>
-                            <th>staking rewards</th>
-                            <th>staked amount</th>
-                            <th className='last-th'>action</th>
-                        </tr>
-                    </thead>
-                    <tbody className='table__body'>
-                        <tr>
-                            <td><img className='token-icon' src={token} alt="token icon" /></td>
-                            <td>15%</td>
-                            <td>30 days</td>
-                            <td>0 SCT</td>
-                            <td>0 SCT</td>
-                            <td className='td-last'>
-                                <Button text={'Harvest'}/>
-                                <Button text={'stake'}/>
-                                <Button text={'unstake'}/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img className='token-icon' src={token} alt="token icon" /></td>
-                            <td>34%</td>
-                            <td>25 days</td>
-                            <td>0 SCT</td>
-                            <td>0 SCT</td>
-                            <td className='td-last'>
-                                <Button text={'Harvest'}/>
-                                <Button text={'stake'}/>
-                                <Button text={'unstake'}/></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div className="table-container">
+                    <table className='table'>
+                        <thead className='table__head'>
+                            <tr className='head-row'>
+                                <th className='first-th'>tokens</th>
+                                <th className='align-center' >est. apy</th>
+                                <th className='align-center' >duration</th>
+                                <th className='align-center' >staking rewards</th>
+                                <th className='align-center' >staked amount</th>
+                                <th className='last-th'>action</th>
+                            </tr>
+                        </thead>
+                        <tbody className='table__body'>
+                            <tr>
+                                <td><img className='token-icon' src={token} alt="token icon" /></td>
+                                <td className='align-center'>15%</td>
+                                <td className='align-center' >30 days</td>
+                                <td className='align-center' >0 SCT</td>
+                                <td className='align-center' >0 SCT</td>
+                                <td className='td-last'>
+                                    <Button text={'Harvest'}/>
+                                    <Button text={'stake'}/>
+                                    <Button text={'unstake'}/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img className='token-icon' src={token} alt="token icon" /></td>
+                                <td className='align-center' >34%</td>
+                                <td className='align-center' >25 days</td>
+                                <td className='align-center' >0 SCT</td>
+                                <td className='align-center' >0 SCT</td>
+                                <td className='td-last'>
+                                    <Button text={'Harvest'}/>
+                                    <Button text={'stake'}/>
+                                    <Button text={'unstake'}/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     )

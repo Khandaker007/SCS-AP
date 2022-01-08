@@ -1,4 +1,5 @@
 @import '../../sass/variables.scss';
+@import '../../sass/mixins.scss';
 
 .overview-card{
     background-color: $color-background-3;
@@ -9,18 +10,36 @@
     align-items: center;
     gap: 1.5rem;
 
+    @include response(phone){
+        padding: 3rem;
+
+        gap: 2.5rem;
+    }
+
     .icon{
         width: 2.5rem;
+
+        @include response(phone){
+            width: 5rem;
+        }
     }
     .text-container{
         .text{
             font-size: 1.1rem;
             font-weight: 600;
             text-transform: uppercase;
+
+            @include response(phone){
+                font-size: 2rem;
+            }
         }
         .number{
             font-size: 2rem;
             font-weight: 600;
+
+            @include response(phone){
+                font-size: 3.5rem;
+            }
         }
     }
 

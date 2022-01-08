@@ -1,4 +1,5 @@
 @import '../../sass/variables.scss';
+@import '../../sass/mixins.scss';
 
 .overview{
     padding: 2rem 1rem 1rem 1rem;
@@ -6,6 +7,10 @@
     border: 1px solid white;
 
     position: relative;
+
+    @include response(phone){
+        padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+    }
 
     &__heading{
         font-size: 1.6rem;
@@ -17,11 +22,22 @@
         left: 3rem;
 
         background-color: $color-background-1;
+
+        @include response(phone){
+            font-size: 2.5rem;
+            position: absolute;
+            top: -2rem;
+            left: 3rem;
+        }
     }
 
     .card-container{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 1rem;
+
+        @include response(phone){
+            grid-template-columns: 1fr;
+        }
     }
 }
